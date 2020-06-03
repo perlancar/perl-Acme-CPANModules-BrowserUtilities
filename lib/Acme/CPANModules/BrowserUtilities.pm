@@ -8,11 +8,10 @@ package Acme::CPANModules::BrowserUtilities;
 use strict;
 use Acme::CPANModulesUtil::Misc;
 
-my $text = <<'_';
-**General**
+our $text_general = <<'_';
+_
 
-
-**Firefox**
+our $text_firefox = <<'_';
 
 <pm:App::FirefoxUtils> (comes with CLIs like <prog:pause-firefox>,
 <prog:unpause-firefox>, <prog:kill-firefox>, <prog:list-firefox-profiles>, etc).
@@ -43,8 +42,9 @@ TODO: Comparison between these
 
 <pm:Selenium::Firefox>
 
+_
 
-**Google Chrome**
+our $text_chrome = <<'_';
 
 <pm:App::ChromeUtils> (comes with CLIs like <prog:pause-chrome>,
 <prog:unpause-chrome>, <prog:kill-chrome>, <prog:list-chrome-profiles>, etc).
@@ -55,16 +55,18 @@ TODO: Comparison between these
 
 <pm:WWW::Mechanize::Chrome>
 
+_
 
-**Opera**
+our $text_opera = <<'_';
 
 <pm:App::OperaUtils> (comes with CLIs like <prog:pause-opera>,
 <prog:unpause-opera>, <prog:kill-opera>, etc).
 
 <pm:App::DumpOperaHistory> (comes with CLI: <prog:dump-opera-history>).
 
+_
 
-**Vivaldi**
+our $text_vivaldi = <<'_';
 
 <pm:App::VivaldiUtils> (comes with CLIs like <prog:pause-vivaldi>,
 <prog:unpause-vivaldi>, <prog:kill-vivaldi>, <prog:list-vivaldi-profiles>, etc).
@@ -72,6 +74,31 @@ TODO: Comparison between these
 <pm:App::DumpVivaldiHistory> (comes with CLI: <prog:dump-vivaldi-history>).
 
 <pm:Vivaldi::Util::Profile>
+
+_
+
+
+my $text = <<_;
+**General**
+
+$text_general
+
+**Firefox**
+
+$text_firefox
+
+**Google Chrome**
+
+$text_chrome
+
+**Opera**
+
+$text_opera
+
+**Vivaldi**
+
+$text_vivaldi
+
 _
 
 our $LIST = {
